@@ -1,14 +1,11 @@
 import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
-import ButtonSplitter from "./components/ButtonSplitter";
-import InputSplitter from "./components/InputSplitter";
+import React, { useState } from "react";
+import HomePage from "./src/pages/HomePage";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <InputSplitter placeholder=" Enter Music" />
-        <ButtonSplitter title={"SPLITTER"} />
-      </View>
+      <HomePage />
     </SafeAreaView>
   );
 }
