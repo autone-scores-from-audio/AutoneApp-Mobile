@@ -1,14 +1,17 @@
 import { StyleSheet, TextInput } from "react-native";
 import React from "react";
+import { useState } from "react";
 
-export default function BasicInput(props) {
+const BasicInput = (props) => {
+  const [text, setText] = useState('');
+
   return (
     <TextInput
+      placeholder={props.placeholder}
       style={styles.input}
       autoCapitalize="none"
-      autoComplete="off"
-      autoCorrect={false}
-      {...props}
+      onChangeText={newText => setText(newText)}
+      defaultValue={text}
     />
   );
 }
@@ -24,3 +27,5 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
+
+export default BasicInput;
